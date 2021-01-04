@@ -16,6 +16,7 @@ class MovieFragmentViewModel(application: Application): AndroidViewModel(applica
     private val repository = TMDBRepository(getDatabase(application))
 
     val upcomingMovies = repository.upcomingMovies
+    val topRatedMovies = repository.topRatedMovies
 
     init {
         refreshDataFromRepository()
@@ -25,12 +26,14 @@ class MovieFragmentViewModel(application: Application): AndroidViewModel(applica
         viewModelScope.launch {
 
             try {
-
                 repository.refreshUpcomingMovies()
+                repository.refreshTopRatedMovies()
             } catch (networkError: IOException) {
                 Toast.makeText(getApplication(), "Network Error", Toast.LENGTH_SHORT).show()
             }
         }
+
+
     }
 
 

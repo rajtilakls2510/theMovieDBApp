@@ -24,11 +24,16 @@ object TMDBApi {
         retrofit.create(TMDBApiService::class.java)
     }
     const val API_KEY = "bce14f5ba33678cf8674b87e4cbe17fc"
+
+    const val IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500/"
 }
 
 interface TMDBApiService {
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(@Query("api_key") api_key: String): NetworkUpcomingMoviesContainer
+
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovies(@Query("api_key") api_key: String): NetworkTopRatedMoviesContainer
 }
 
 

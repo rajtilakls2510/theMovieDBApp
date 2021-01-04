@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="start_end_padding">16dp</dimen>
+    <dimen name="start_end_padding">10dp</dimen>
+    <dimen name="card_elevation">5dp</dimen>
+    <dimen name="card_corner_radius">10dp</dimen>
+    <dimen name="margin_vertical">5dp</dimen>
 </resources>

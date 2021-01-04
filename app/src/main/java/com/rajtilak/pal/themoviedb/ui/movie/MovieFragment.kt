@@ -25,7 +25,9 @@ class MovieFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        binding.upcomingMoviesRecyclerView.adapter = UpcomingMoviesAdapter()
+        binding.upcomingMoviesRecyclerView.adapter = MoviesAdapter()
+        binding.topRatedMoviesRecyclerView.adapter = MoviesAdapter()
+
 
         return binding.root
     }

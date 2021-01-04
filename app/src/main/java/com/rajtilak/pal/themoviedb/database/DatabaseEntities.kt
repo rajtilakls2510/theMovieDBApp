@@ -14,7 +14,29 @@ data class DatabaseUpcomingMovie constructor(
     val release_date: String
 )
 
-fun List<DatabaseUpcomingMovie>.asDomainModel(): List<MoviePreview> {
+fun List<DatabaseUpcomingMovie>.asUpcomingDomainModel(): List<MoviePreview> {
+    return map {
+        MoviePreview(
+            id = it.id,
+            title = it.title,
+            poster_path = it.poster_path,
+            rating = it.rating,
+            release_date = it.release_date
+        )
+    }
+}
+
+@Entity(tableName = "top_rated_movies")
+data class DatabaseTopRatedMovie constructor(
+    @PrimaryKey
+    val id: Int,
+    val title: String,
+    val poster_path: String,
+    val rating: Float,
+    val release_date: String
+)
+
+fun List<DatabaseTopRatedMovie>.asTopRatedDomainModel(): List<MoviePreview> {
     return map {
         MoviePreview(
             id = it.id,

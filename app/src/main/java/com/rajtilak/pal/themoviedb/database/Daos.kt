@@ -16,3 +16,14 @@ interface UpcomingMoviesDao {
     fun insertAll(videos: List<DatabaseUpcomingMovie>)
 
 }
+
+@Dao
+interface TopRatedMoviesDao {
+
+    @Query("SELECT * FROM top_rated_movies")
+    fun getMovies(): LiveData<List<DatabaseTopRatedMovie>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(videos: List<DatabaseTopRatedMovie>)
+
+}

@@ -10,7 +10,7 @@ import com.rajtilak.pal.themoviedb.databinding.MovieListItemBinding
 import com.rajtilak.pal.themoviedb.domain.MoviePreview
 
 private const val TAG = "UpcomingMoviesAdapter"
-class UpcomingMoviesAdapter: ListAdapter<MoviePreview, UpcomingMoviesAdapter.MoviePreviewViewHolder>(DiffCallback) {
+class MoviesAdapter: ListAdapter<MoviePreview, MoviesAdapter.MoviePreviewViewHolder>(DiffCallback) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviePreviewViewHolder {

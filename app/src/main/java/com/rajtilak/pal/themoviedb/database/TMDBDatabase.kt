@@ -7,10 +7,12 @@ import androidx.room.RoomDatabase
 
 private lateinit var INSTANCE: TMDBDatabase
 
-@Database(entities = [DatabaseUpcomingMovie::class], version = 1)
+@Database(entities = [DatabaseUpcomingMovie::class, DatabaseTopRatedMovie::class], version = 1)
 abstract class TMDBDatabase: RoomDatabase() {
 
     abstract val upcomingMoviesDao: UpcomingMoviesDao
+
+    abstract val topRatedMoviesDao: TopRatedMoviesDao
 }
 
 fun getDatabase(context: Context): TMDBDatabase {
